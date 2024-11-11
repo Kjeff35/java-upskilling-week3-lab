@@ -15,18 +15,30 @@ public class UserRepositoryImpl implements UserRepository {
         this.users = new ArrayList<>();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public List<User> getUsers() {
         return users;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public User getUserByEmail(String email) {
         return users.stream().filter(user -> user.getEmail().equalsIgnoreCase(email)).findFirst().orElse(null);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public void addUser(User user) {
         users.add(user);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public void removeUser(User user) {
         users.remove(user);
     }
